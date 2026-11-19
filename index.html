@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090711"><meta name="description" content="VYROXA — Connect. Create. Discover.">
+<link rel="manifest" href="manifest.json">
+<title>VYROXA</title>
+<style>
+:root{--bg:#090711;--panel:#151222;--panel2:#1d1830;--line:#302747;--text:#f7f3ff;--muted:#aaa1bd;--violet:#8b5cf6;--blue:#3988ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#30205c 0,transparent 32%),var(--bg);color:var(--text);font:15px Inter,system-ui,Arial,sans-serif}
+button,input,textarea{font:inherit}button{cursor:pointer;border:0;color:inherit}.app{max-width:1080px;margin:auto;min-height:100vh;padding-bottom:76px}
+header{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid #ffffff12;position:sticky;top:0;background:#090711eF;backdrop-filter:blur(16px);z-index:5}
+.logo{font-size:24px;font-weight:900;letter-spacing:3px;background:linear-gradient(90deg,#b18aff,#4f9bff);color:transparent;background-clip:text}.tag{font-size:10px;color:var(--muted);letter-spacing:1px}
+.avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--blue));display:grid;place-items:center;font-weight:800}
+main{padding:18px;max-width:760px;margin:auto}.welcome{padding:22px;border-radius:22px;background:linear-gradient(125deg,#241640,#121a35);border:1px solid #ffffff16;margin-bottom:18px}.welcome h1{margin:0 0 6px;font-size:26px}.muted{color:var(--muted)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;margin:14px 0}
+.row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}.grow{flex:1}
+input,textarea{width:100%;background:#0d0a16;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:12px;outline:none}textarea{resize:vertical;min-height:76px}
+.primary{background:linear-gradient(100deg,var(--violet),var(--blue));padding:11px 17px;border-radius:12px;font-weight:700}.secondary{background:var(--panel2);padding:10px 14px;border-radius:12px}.tabs{display:flex;gap:8px;overflow:auto;padding:12px 18px;border-bottom:1px solid #ffffff12}.tab{white-space:nowrap;padding:9px 13px;border-radius:12px;background:transparent;color:var(--muted)}.tab.active{background:#33234e;color:white}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#100c1bee;border-top:1px solid var(--line);display:flex;justify-content:center;gap:4px;padding:8px;z-index:8;backdrop-filter:blur(15px)}.bottom button{background:transparent;color:var(--muted);padding:8px 10px;border-radius:12px;font-size:12px}.bottom button.active{color:white;background:#34234e}
+.posthead{display:flex;align-items:center;gap:10px}.posthead strong{display:block}.posthead small{color:var(--muted)}.posttext{line-height:1.5;white-space:pre-wrap;margin:14px 0}.postimg{width:100%;max-height:420px;object-fit:cover;border-radius:14px;background:#211a32}.actions{display:flex;gap:8px;margin-top:12px}.actions button{background:#211a32;padding:9px 12px;border-radius:10px;color:#d9d0ea}
+.storybar{display:flex;gap:13px;overflow:auto}.story{text-align:center;min-width:62px;font-size:11px;color:var(--muted)}.ring{width:54px;height:54px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#a855f7,#3988ff);margin:auto auto 5px}.ring span{display:grid;place-items:center;background:#211a32;border:2px solid var(--bg);width:100%;height:100%;border-radius:50%;font-weight:700;color:white}
+.hidden{display:none!important}.empty{text-align:center;padding:30px;color:var(--muted)}.reel{background:linear-gradient(160deg,#28184b,#101c36);height:390px;border-radius:18px;display:grid;place-items:center;text-align:center;padding:25px}.profilegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.tile{aspect-ratio:1;background:linear-gradient(135deg,#38215c,#172b4d);border-radius:9px;display:grid;place-items:center;color:#d9caff}
+@media(min-width:760px){main{padding-top:28px}.bottom{position:static;background:transparent;border:0}.bottom button{font-size:14px}.app{padding-bottom:0}}
+</style></head>
+<body><div class="app">
+<header><div><div class="logo">VYROXA</div><div class="tag">CONNECT. CREATE. DISCOVER.</div></div><div class="row"><span class="muted" id="headerName">Guest</span><div class="avatar" id="headerAvatar">G</div></div></header>
+<nav class="tabs" id="topTabs"><button class="tab active" data-page="home">For you</button><button class="tab" data-page="explore">Explore</button><button class="tab" data-page="reels">Reels</button><button class="tab" data-page="inbox">Inbox</button><button class="tab" data-page="profile">Profile</button></nav>
+<main>
+<section id="home" class="page">
+<div class="welcome"><h1>Your world, your feed.</h1><div class="muted">Share moments. Discover people. Stay connected.</div></div>
+<div class="panel"><div class="storybar"><div class="story"><div class="ring"><span>+</span></div>Your story</div><div class="story"><div class="ring"><span>MK</span></div>Mika</div><div class="story"><div class="ring"><span>AR</span></div>Arun</div><div class="story"><div class="ring"><span>ZN</span></div>Zara</div><div class="story"><div class="ring"><span>JL</span></div>Jules</div></div></div>
+<div class="panel"><div class="row"><div class="avatar" id="composerAvatar">G</div><div class="grow"><textarea id="postText" placeholder="What would you like to share?"></textarea></div></div><div class="row between" style="margin-top:10px"><label class="secondary">Add image <input id="postImage" type="file" accept="image/*" hidden></label><span class="muted" id="fileName">No image selected</span><button class="primary" id="publish">Post</button></div></div>
+<div id="feed"></div>
+</section>
+<section id="explore" class="page hidden"><div class="welcome"><h1>Explore</h1><div class="muted">Find something inspiring.</div></div><input id="search" placeholder="Search posts or people…"><div id="exploreResults"></div></section>
+<section id="reels" class="page hidden"><div class="welcome"><h1>Reels</h1><div class="muted">Short-form video space</div></div><div class="reel"><div><div style="font-size:48px">▶</div><h2>Make your first Reel</h2><p class="muted">Video publishing will be enabled when a secure media backend is connected.</p></div></div></section>
+<section id="inbox" class="page hidden"><div class="welcome"><h1>Inbox</h1><div class="muted">Your conversations</div></div><div class="panel"><strong>Messages are not connected yet</strong><p class="muted">This starter version does not send messages between different users. A backend is needed for real-time chat.</p></div></section>
+<section id="profile" class="page hidden"><div class="panel"><div class="row"><div class="avatar" style="width:64px;height:64px" id="profileAvatar">G</div><div><h2 id="profileName" style="margin:0">Guest</h2><div class="muted" id="profileBio">New to VYROXA</div></div></div><div class="row" style="margin-top:16px"><input id="editName" placeholder="Display name"><input id="editBio" placeholder="Bio"></div><button class="primary" id="saveProfile" style="margin-top:10px">Save profile</button></div><div class="panel"><strong>Your posts</strong><div class="profilegrid" id="profileGrid"></div></div></section>
+</main>
+<nav class="bottom" id="bottomTabs"><button class="active" data-page="home">⌂ Home</button><button data-page="explore">⌕ Explore</button><button data-page="reels">▷ Reels</button><button data-page="inbox">✉ Inbox</button><button data-page="profile">◉ Profile</button></nav>
+</div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+let posts=JSON.parse(localStorage.getItem('vyroxa_posts')||'[]');
+let profile=JSON.parse(localStorage.getItem('vyroxa_profile')||'{"name":"Guest","bio":"New to VYROXA"}');
+let selectedImage='';
+function initials(n){return (n||'G').trim().split(/\s+/).map(x=>x[0]).join('').slice(0,2).toUpperCase()}
+function persist(){localStorage.setItem('vyroxa_posts',JSON.stringify(posts));}
+function show(page){$$('.page').forEach(x=>x.classList.toggle('hidden',x.id!==page));$$('[data-page]').forEach(x=>x.classList.toggle('active',x.dataset.page===page));}
+$$('[data-page]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.page)));
+function syncProfile(){let n=profile.name||'Guest';$('#headerName').textContent=n;$('#headerAvatar').textContent=initials(n);$('#composerAvatar').textContent=initials(n);$('#profileAvatar').textContent=initials(n);$('#profileName').textContent=n;$('#profileBio').textContent=profile.bio||'New to VYROXA';$('#editName').value=profile.name;$('#editBio').value=profile.bio||''}
+function render(){
+ const feed=$('#feed');feed.innerHTML='';$('#profileGrid').innerHTML='';
+ if(!posts.length)feed.innerHTML='<div class="empty">No posts yet. Share your first moment above.</div>';
+ posts.slice().reverse().forEach(p=>{
+  const el=document.createElement('article');el.className='panel';
+  el.innerHTML=`<div class="posthead"><div class="avatar">${initials(p.author)}</div><div><strong>${escapeHtml(p.author)}</strong><small>Just now · VYROXA</small></div></div><div class="posttext">${escapeHtml(p.text)}</div>${p.image?`<img class="postimg" src="${p.image}" alt="Post image">`:''}<div class="actions"><button data-like="${p.id}">♥ ${p.likes||0}</button><button data-comment="${p.id}">Comment</button><button data-share="${p.id}">Share</button></div><div id="comments-${p.id}"></div>`;
+  feed.appendChild(el);
+  const tile=document.createElement('div');tile.className='tile';tile.textContent=p.image?'▧':'V';$('#profileGrid').appendChild(tile);
+ });
+ $$('[data-like]').forEach(b=>b.onclick=()=>{let p=posts.find(x=>x.id==b.dataset.like);p.likes=(p.likes||0)+1;persist();render()});
+ $$('[data-comment]').forEach(b=>b.onclick=()=>{let t=prompt('Write a comment');if(t){let p=posts.find(x=>x.id==b.dataset.comment);p.comments=p.comments||[];p.comments.push(t);persist();render();const box=$('#comments-'+p.id);box.innerHTML=p.comments.map(c=>`<p class="muted">💬 ${escapeHtml(c)}</p>`).join('')}});
+ $$('[data-share]').forEach(b=>b.onclick=()=>{let p=posts.find(x=>x.id==b.dataset.share);let s=p.text||'VYROXA post';if(navigator.share)navigator.share({title:'VYROXA',text:s}).catch(()=>{});else alert(s)});
+ posts.forEach(p=>{let box=$('#comments-'+p.id);if(box&&p.comments?.length)box.innerHTML=p.comments.map(c=>`<p class="muted">💬 ${escapeHtml(c)}</p>`).join('')});
+}
+function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+$('#postImage').onchange=e=>{let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{selectedImage=r.result;$('#fileName').textContent=f.name};r.readAsDataURL(f)};
+$('#publish').onclick=()=>{let text=$('#postText').value.trim();if(!text&&!selectedImage){alert('Write something or choose an image first.');return}posts.push({id:Date.now(),author:profile.name||'Guest',text,image:selectedImage,likes:0,comments:[]});persist();$('#postText').value='';$('#postImage').value='';$('#fileName').textContent='No image selected';selectedImage='';render()};
+$('#saveProfile').onclick=()=>{profile={name:$('#editName').value.trim()||'Guest',bio:$('#editBio').value.trim()};localStorage.setItem('vyroxa_profile',JSON.stringify(profile));syncProfile();render();alert('Profile saved on this device.')};
+$('#search').oninput=()=>{let q=$('#search').value.toLowerCase();$('#exploreResults').innerHTML=posts.filter(p=>(p.text+' '+p.author).toLowerCase().includes(q)).map(p=>`<div class="panel"><strong>${escapeHtml(p.author)}</strong><p>${escapeHtml(p.text)}</p></div>`).join('')||'<p class="muted">No matching posts.</p>'};
+syncProfile();render();
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script></body></html>
